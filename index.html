@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="stylesheet.css">
+
+</head>
+
+<body>
+    <div class="iframe-container">
+
+        <h1> Medusa </h1>
+        <h2> Stream you favorite shows nonstop.</h2>
+
+        <iframe src="https://www.youtube.com/embed/O67fpWFoz3w?autoplay=1&mute=1&loop=1&rel=0&fs=0&controls=0"
+            width="560" height="315" frameborder="0"></iframe>
+    </div>
+    <div class="themed-container">
+        <p> Summer 2021</p>
+        <p> exclusive streaming of Tv-shows and movies</p>
+
+    </div>
+
+    <div class="themed-container">
+        <p> Recommended </p>
+        <p> most watched TV-shows</p>
+
+    </div>
+
+    <div class="themed-container">
+        <p> International Shows</p>
+        <p> a variety of TV-shows from all over the world</p>
+    </div>
+    <table class="table table-hover">
+        <thead>
+            <th>Date</th>
+            <th>Fact</th>
+        </thead>
+        <tbody id="tbody">
+
+        </tbody>
+        <button onclick="helloEvent()"> Show More </button>
+        <button id="myButton">Another button</button>
+    </table>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
+    <script src="tvmazefull.json"></script>
+    <script src="main.js"></script>
+</body>
+
+</html>

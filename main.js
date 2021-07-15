@@ -47,3 +47,23 @@ createTable()
 // myButton.addEventListener("click", function (event) {
 //     console.log(`event`, event.target.id)
 // })
+
+//hoisting function declaration
+console.log(functionBelow ("hello"))
+function functionBelow (greet) {
+    return `${greet} world`;
+}
+console.log(functionBelow("Hi"));
+
+
+//function expression
+const myFunction=function (msg) {
+    console.log(msg)
+}
+myFunction("What's up?")
+
+//function expression (arrow)
+const arrowFunction=(msg) => {
+    console.log(msg)
+}
+arrowFunction(`that's fucking awesome!`)

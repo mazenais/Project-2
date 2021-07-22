@@ -148,55 +148,57 @@ function searchShow(query) {
     .then(response => response.json())
     .then((jsonData) => {
       console.log(jsonData);
+      createHtmlTable(jsonData);
+
 
     });
 }
 
-function createTable() {
-  var tbody = document.getElementById("tbody")
+//function createTable() {
+  // var tbody = document.getElementById("tbody")
   // var button3 = document.createElement("button")
   // button3.innerHTML = "that other button"
   // button3.id = "button3"
   // button3.className = "btn btn-primary"
-  for (var i = 0; i < data.length; i++) {
+  // for (var i = 0; i < data.length; i++) {
 
 
-      var tr = document.createElement("tr")
-      if (i % 2 == 0) {
-          tr.className = "table-primary"
-      }
-      else {
-          tr.style.color = "red"
-      }
-      var td1 = document.createElement("td")
-      var td2 = document.createElement("td")
-      var td3 = document.createElement("td")
-      var td4 = document.createElement("td")
+  //     var tr = document.createElement("tr")
+  //     if (i % 2 == 0) {
+  //         tr.className = "table-primary"
+  //     }
+  //     else {
+  //         tr.style.color = "red"
+  //     }
+  //     var td1 = document.createElement("td")
+  //     var td2 = document.createElement("td")
+  //     var td3 = document.createElement("td")
+  //     var td4 = document.createElement("td")
 
-      td1.innerHTML = data[i].name
-      td2.innerHTML = data[i].summary
-      td3.innerHTML = data[i].airdate
-      td4.innerHTML = data[i].url
+  //     td1.innerHTML = data[i].name
+  //     td2.innerHTML = data[i].summary
+  //     td3.innerHTML = data[i].airdate
+  //     td4.innerHTML = data[i].url
 
-      tr.appendChild(td1)
-      tr.appendChild(td2)
-      tr.appendChild(td3)
-      tr.appendChild(td4)
-      tbody.appendChild(tr)
+  //     tr.appendChild(td1)
+  //     tr.appendChild(td2)
+  //     tr.appendChild(td3)
+  //     tr.appendChild(td4)
+  //     tbody.appendChild(tr)
 
-  }
+  // }
   // tbody.appendChild(button3)
-}
-createTable ()
+// }
+//createTable ()
 
-function helloEvent() {
-  createTable()
+// function helloEvent() {
+//   createTable()
 //   var button3 = document.getElementById("button3")
 //   button3.addEventListener("click", function (event) {
 //       console.log(`event`, event.target.id)
 //   })
 //   console.log("Hello button")
-}
+//}
 
 // var myButton = document.getElementById("myButton")
 
@@ -245,7 +247,7 @@ async function getDataDeclarative() {
 // function for creating table and dropDown 
 const createHtmlTable = (showsList) => {
 
-  let table = document.querySelector("#table");
+  let table = document.querySelector("#tbody");
   table.innerHTML= ""
   showsList.forEach((ele, i) => {
     let row = document.createElement("tr");
@@ -253,17 +255,17 @@ const createHtmlTable = (showsList) => {
     table.appendChild(row);
 
     let column = document.createElement("td");
-    column.innerHTML = ele.title;
+    column.innerHTML = ele.show.name;
     row.appendChild(column);
 
     let column2 = document.createElement("td")
-    column2.innerrHTML = ele.summary.name;
+    column2.innerHTML = ele.show.summary;
     row.appendChild(column2);
 
     let column3 = document.createElement("td");
     
 
-    const date = new date(ele.date).toLocaleString("de-DE", { day: "2-digit", month: "long", year: "2-digit" })
+    const date = new Date(ele.show.premiered).toLocaleString("de-DE", { day: "2-digit", month: "long", year: "2-digit" })
     console.log("date:>>", date);
     column3.innerHTML= date;
     row.appendChild(column3);

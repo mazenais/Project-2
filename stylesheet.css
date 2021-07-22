@@ -84,6 +84,7 @@
 .p {
   text-align:justify;
   font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  position: absolute;
 }
 .themed-container {
     padding: .75rem;
@@ -123,4 +124,39 @@
     margin-bottom: 10px;
     border-top-left-radius: 0;
     border-top-right-radius: 0;
+  }
+
+  .fa {
+    padding: 20px;
+    font-size: 30px;
+    width: 50px;
+    text-align: center;
+    text-decoration: none;
+  }
+  
+  /* Add a hover effect if you want */
+  .fa:hover {
+    opacity: 0.7;
+  }
+  
+  /* Set a specific color for each brand */
+  
+  /* Facebook */
+  .fa-facebook {
+    background: #3B5998;
+    color: white;
+  }
+  
+  /* Twitter */
+  .fa-twitter {
+    background: #55ACEE;
+    color: white;
+  }
+
+  .fa-instagram {
+    background: #8a3ab9;
+  }
+
+  .fa-youtube {
+    background: #bb0000;
   }

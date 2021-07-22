@@ -152,57 +152,57 @@ function searchShow(query) {
     });
 }
 
-function createTable (data) {
-  
-    var tbody = document.getElementById("tbody")
-    var button3 = document.createElement("button")
-    button3.innerHTML = "that other button"
-    button3.id = "button3"
-    button3.className = "btn btn-primary"
-    
-    for (var i = 0; i < data.length; i++) {
-      
-      
-        var tr = document.createElement("tr")
-        if (i % 2 == 0) {
-            tr.className = "table-primary"
-        }
-        else {
-            tr.style.color = "blue"
-        }
-        var td1 = document.createElement("td")
-        var td2 = document.createElement("td")
-        var td3 = document.createElement("td")
-        var td4 = document.createElement("td")
+function createTable() {
+  var tbody = document.getElementById("tbody")
+  // var button3 = document.createElement("button")
+  // button3.innerHTML = "that other button"
+  // button3.id = "button3"
+  // button3.className = "btn btn-primary"
+  for (var i = 0; i < data.length; i++) {
 
-        td1.innerHTML = data[i].name
-        td2.innerHTML = data[i].summary
-        td3.innerHTML = data[i].airdate
-        td4.innerHTML = data[i].url
 
-        tr.appendChild(td1)
-        tr.appendChild(td2)
-        tr.appendChild(td3)
-        tr.appendChild(td4)
-        tbody.appendChild(tr)
+      var tr = document.createElement("tr")
+      if (i % 2 == 0) {
+          tr.className = "table-primary"
+      }
+      else {
+          tr.style.color = "red"
+      }
+      var td1 = document.createElement("td")
+      var td2 = document.createElement("td")
+      var td3 = document.createElement("td")
+      var td4 = document.createElement("td")
 
-    }
-    tbody.appendChild(button3)
+      td1.innerHTML = data[i].name
+      td2.innerHTML = data[i].summary
+      td3.innerHTML = data[i].airdate
+      td4.innerHTML = data[i].url
+
+      tr.appendChild(td1)
+      tr.appendChild(td2)
+      tr.appendChild(td3)
+      tr.appendChild(td4)
+      tbody.appendChild(tr)
+
+  }
+  // tbody.appendChild(button3)
 }
-createTable()
-var button3 = document.getElementById("button3")
-    button3.addEventListener("click", function (event) {
-        console.log(`event`, event.target.id)
-    })
-    console.log("Hello button")
+createTable ()
 
+function helloEvent() {
+  createTable()
+//   var button3 = document.getElementById("button3")
+//   button3.addEventListener("click", function (event) {
+//       console.log(`event`, event.target.id)
+//   })
+//   console.log("Hello button")
+}
 
-var myButton = document.getElementById("myButton")
+// var myButton = document.getElementById("myButton")
 
-myButton.addEventListener("click", function (event) {
-    console.log(`event`, event.target.id)
-})
-
+// myButton.addEventListener("click", function (event) {
+//   console.log(`event`, event.target.id)
+// })
 
 
 if (document.title== "Home") {
@@ -214,3 +214,59 @@ if (document.title== "Home") {
     }
 
 }
+
+// fetching the data
+const getData= () => {
+  fetch ("https://api.tvmaze.com/search/shows?").then((response) => {
+    return response.json();
+  }) .then((data) => {
+    console.log("data", data)
+    createHtmlTable(data)
+  })
+}
+
+//turn fetch in async/await
+const getDataAsync = async () => {
+  const response = await fetch ("https://api.tvmaze.com/search/shows?")
+  console.log("response :>> ", response);
+
+  const data = await response.json()
+  console.log("data :>>", data);
+  
+  createHtmlTable(data)
+  createDropDown(data)
+
+  return data
+}
+async function getDataDeclarative() {
+
+}
+
+// function for creating table and dropDown 
+const createHtmlTable = (showsList) => {
+
+  let table = document.querySelector("#table");
+  table.innerHTML= ""
+  showsList.forEach((ele, i) => {
+    let row = document.createElement("tr");
+    row.id = `table-row-${i}`
+    table.appendChild(row);
+
+    let column = document.createElement("td");
+    column.innerHTML = ele.title;
+    row.appendChild(column);
+
+    let column2 = document.createElement("td")
+    column2.innerrHTML = ele.summary.name;
+    row.appendChild(column2);
+
+    let column3 = document.createElement("td");
+    
+
+    const date = new date(ele.date).toLocaleString("de-DE", { day: "2-digit", month: "long", year: "2-digit" })
+    console.log("date:>>", date);
+    column3.innerHTML= date;
+    row.appendChild(column3);
+  })
+}
+

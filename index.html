@@ -7,13 +7,15 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <link rel="stylesheet" href="stylesheet.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <title>Home</title>
 
 </head>
 
 <body>
     <nav class="navbar navbar-expand-md navbar-dark bg-dark mb-4">
         <div class="container-fluid">
-            <a class="navbar-brand" href="#"> Medusa </a>
+            <a class="navbar-brand" href="#"> TV World </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse"
                 aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
@@ -29,6 +31,7 @@
                     <li class="nav-item">
                         <a class="nav-link" href="secondpage.html"> Second page </a>
                     </li>
+
                 </ul>
                 <form class="d-flex">
                     <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
@@ -36,28 +39,42 @@
                 </form>
             </div>
         </div>
+        <a href="https://m.facebook.com/tvmaze/" class="fa fa-facebook"></a>
+        <a href="https://twitter.com/tvmaze?lang=en" class="fa fa-twitter"></a>
+        <a href="https://www.instagram.com/maze.iptv/?hl=en" class="fa fa-instagram"></a>
+        <a href="https://www.youtube.com/c/Tvmazecom/featured" class="fa fa-youtube"></a>
     </nav>
+
 
     <div class="iframe-container">
 
-        <h1> Medusa </h1>
+        <h1> TV World </h1>
         <h2> Stream you favorite shows nonstop.</h2>
 
         <iframe src="https://www.youtube.com/embed/O67fpWFoz3w?autoplay=1&mute=1&loop=1&rel=0&fs=0&controls=0"
             width="560" height="315" frameborder="0"></iframe>
     </div>
     <p> This online TV show streaming site lets you watch episodes without signing up. However, if you choose to do
-        so, Medusa lets you create a watch list of favorites and resume playback across different devices. It has a
+        so, TV World lets you create a watch list of favorites and resume playback across different devices. It has a
         neat and clean interface with well-outlined categories like TV Dramas, TV Comedies, Reality TV, and Crime
         TV.
 
-        There are lots of original content hosted on Medusa across several genres such as action, comedy,
+        There are lots of original content hosted on TV World across several genres such as action, comedy,
         drama, horror, sci-fi, etc., rounding up to about 100 TV series altogether. And the best part is you can
         view them across multiple devices.
 
         There is no limit to how many TV videos you can watch and the best part is that Medusa offers free Android
         and iOS apps to watch TV shows online. You can also stream episodes across multiple devices like Android TV
         or smart TVs. While the videos are not exactly ad-free but they are 100% legal to watch.</p>
+
+    <div class="container">
+        <select name="shows" id="showsDropdown">
+            <option value="all"> All</option>
+        </select>
+        <label for="date">Date:</label>
+        <input type="date" id="date" name="date">
+        <table class="table table-bordered" id="table"></table>
+    </div>
     <div class="themed-container">
         <p> Summer 2021</p>
         <p> exclusive streaming of Tv-shows and movies</p>
@@ -66,7 +83,20 @@
 
     <div class="themed-container">
         <p> Recommended </p>
-        <p> most watched TV-shows</p>
+        <p> search the most watched TV-shows</p>
+        <input type="text" id="searchField" placeholder="Search Tv Show">
+        <table class="table table-dark table-striped">
+            <thead>
+                <th>name </th>
+                <th>summary</th>
+                <th>airdate </th>
+                <th>url</th>
+            </thead>
+            <tbody id="tbody">
+
+            </tbody>
+
+        </table>
 
     </div>
 
@@ -80,7 +110,7 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
         crossorigin="anonymous"></script>
-    <script src="tvmazefull.js"></script>
+    <script src="response.js"></script>
     <script src="main.js"></script>
 </body>
 

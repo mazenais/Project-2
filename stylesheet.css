@@ -1,3 +1,11 @@
+$main #252529
+$secondary #8b8b9f
+$highlight #73e298
+
+body {
+  background-color:white;
+  color: black;
+}
 .b-example-divider {
     height: 3rem;
     background-color: rgba(0, 0, 0, .1);
@@ -8,19 +16,21 @@
   
   .form-control-dark {
     color: #fff;
-    background-color: var(--bs-dark);
+    background-color: white;
     border-color: var(--bs-gray);
   }
   .form-control-dark:focus {
     color: #fff;
-    background-color: var(--bs-dark);
+    background-color: white;
     border-color: #fff;
     box-shadow: 0 0 0 .25rem rgba(255, 255, 255, .25);
   }
   
+
   .bi {
     vertical-align: -.125em;
     fill: currentColor;
+    
   }
   
   .text-small {
@@ -85,6 +95,7 @@
   text-align:justify;
   font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
   position: absolute;
+  color: black;
 }
 .themed-container {
     padding: .75rem;
@@ -160,3 +171,59 @@
   .fa-youtube {
     background: #bb0000;
   }
+
+
+ /* second page */
+
+
+* {
+    box-sizing: border-box
+}
+
+html, body {
+    font-family: 'open sans', sans-serif;
+}
+
+.clearfix:before, .clearfix::after {
+    content:" ";
+    display: table;
+}
+.clearfix::after {
+    clear: both;
+}
+
+.wrapper {
+    width: 1440px;
+    max-width: 90%;
+    margin: 0 auto;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-weight: 300;
+}
+
+#top_header {
+    padding: 1.5em 0;
+    .logo {
+        float: left;
+        text-transform: uppercase;
+        font-size: 1.15em;
+        font-weight: 700;
+        .span {
+            font-weight: 300;
+            color: $highlight;
+
+        }
+    }
+}
+#main_nav {
+  float: right;
+  font-size: .9em;
+  padding-top: 1em;
+  a {
+    color: $secondary;
+    text-decoration: none;
+    margin-left: 2em;
+    ;
+  }
+}

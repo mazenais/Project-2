@@ -1,0 +1,44 @@
+$main #252529
+$secondary #8b8b9f
+$highlight #73e298
+
+* {
+    box-sizing: border-box
+}
+
+html, body {
+    font-family: 'open sans', sans-serif;
+}
+
+.clearfix:before, .clearfix::after {
+    content:" ";
+    display: table;
+}
+.clearfix::after {
+    clear: both;
+}
+
+.wrapper {
+    width: 1440px;
+    max-width: 90%;
+    margin: 0 auto;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-weight: 300;
+}
+
+#top_header {
+    padding: 1.5em 0;
+    .logo {
+        float: left;
+        text-transform: uppercase;
+        font-size: 1.15em;
+        font-weight: 700;
+        .span {
+            font-weight: 300;
+            color: $highlight;
+
+        }
+    }
+}

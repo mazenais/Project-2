@@ -173,3 +173,21 @@ console.log(templating);
 // myButton.addEventListener("click", function (event) {
 //   console.log(`event`, event.target.id)
 // })
+
+
+// //turn fetch in async/await
+// const getDataAsync = async () => {
+//   const response = await fetch ("https://api.tvmaze.com/search/shows?")
+//   console.log("response :>> ", response);
+
+//   const data = await response.json()
+//   console.log("data :>>", data);
+  
+//   createHtmlTable(data)
+//   createDropDown(data)
+
+//   return data
+// }
+// async function getDataDeclarative() {
+
+// }

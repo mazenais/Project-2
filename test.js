@@ -191,3 +191,20 @@ console.log(templating);
 // async function getDataDeclarative() {
 
 // }
+
+
+
+//<table class="table table-bordered" id="table"></table>
+// </div>
+        
+// <thead>
+//     <th>name </th>
+//     <th>summary</th>
+//     <th>airdate </th>
+//     <th>url</th>
+// </thead>
+// <tbody id="tbody">
+
+// </tbody>
+
+// </table>

@@ -105,9 +105,10 @@ body {
     font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
   }
 
-  .table {
+  .table  {
   text-align: center;
   block-size: auto;
+  content: center;
   }
 
   .form-signin {

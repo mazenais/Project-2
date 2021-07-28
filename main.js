@@ -2,9 +2,8 @@
 
 // filter
 const filteredArray = data.filter((e, _i) => {
-  return e.summary 
-  && e.image ;
-})
+  return e.summary && e.image;
+});
 console.log(`filteredArray`, filteredArray);
 
 // combining two filters
@@ -35,14 +34,14 @@ function searchShow(query) {
     });
 }
 
-if (document.title == "Home") {
-  window.onload = () => {
+// if (document.title == "Home") {
+//   window.onload = () => {
     const searchFieldElement = document.getElementById("searchField");
     searchFieldElement.onkeyup = (event) => {
       searchShow(searchFieldElement.value);
     };
-  };
-}
+//   };
+// }
 
 // fetching the data
 const getData = () => {
@@ -53,9 +52,9 @@ const getData = () => {
     .then((data) => {
       console.log("data", data);
       createHtmlTable(data);
-      const shows = data.results
+      const shows = data.results;
       const showBlock = creatTvShowContainer(shows);
-      tv-shows-searchable.appendChild(showBlock)
+      tv - shows - searchable.appendChild(showBlock);
     });
 };
 
@@ -74,38 +73,41 @@ const getData = () => {
 */
 
 // selecting elements from the DOM
-const inputElement = document.querySelector('#inputValues');
-const tvShowsSearchable = document.querySelector('#Tv-shows-searchable');
+// const inputElement = document.querySelector("#inputValues");
+// const tvShowsSearchable = document.querySelector("#Tv-shows-searchable");
 
-// getting image of a tv-show
+// // getting image of a tv-show
 
-function showSection(shows) {
-  return shows.map((show)=> {
-    return `
-        <img src=${show.image} data-show-id=${show.id}/>
-    `
-  })
-}
+// function showSection(shows) {
+//   return shows.map((show) => {
+//     return `
+//         <img src=${show.image} data-show-id=${show.id}/>
+//     `;
+//   });
+// }
 
-function creatTvShowContainer(Shows) {
-  const tvShowElement = document.createElement("div");
-  tvShowElement.setAttribute("class", "show");
+// function creatTvShowContainer(Shows) {
+//   const tvShowElement = document.createElement("div");
+//   tvShowElement.setAttribute("class", "show");
 
-  const showTemplate = `
-      <section class="section">
-              ${showSection(shows)}  
-            </section>
-            <div class="content">
-                <p id="content-close">X</p>
-            </div>
-  `;
-  tvShowElement.innerHTML = showTemplate
-  return tvShowElement
-}
+//   const showTemplate = `
+//       <section class="section">
+//               ${showSection(shows)}  
+//             </section>
+//             <div class="content">
+//                 <p id="content-close">X</p>
+//             </div>
+//   `;
+//   tvShowElement.innerHTML = showTemplate;
+//   return tvShowElement;
+// }
 
-// function for creating table and dropDown
+
+
+//function for creating table and dropDown
 const createHtmlTable = (showsList) => {
-  let table = document.querySelector("#tbody");
+
+  let table = document.querySelector("#table");
   table.innerHTML = "";
   showsList.forEach((ele, i) => {
     let row = document.createElement("tr");
@@ -121,12 +123,11 @@ const createHtmlTable = (showsList) => {
     row.appendChild(column2);
 
     let column3 = document.createElement("td");
-
+   
     const date = new Date(ele.show.premiered).toLocaleString("de-DE", {
       day: "2-digit",
       month: "long",
-      year: "2-digit",
-    });
+      year: "2-digit"});
     console.log("date:>>", date);
     column3.innerHTML = date;
     row.appendChild(column3);
@@ -134,3 +135,42 @@ const createHtmlTable = (showsList) => {
 };
 
 
+const createDropDown = (list) => {
+  const dropdown = document.getElementById("showDropdown");
+  const shows = list.map(e => e.show.name);
+  // console.log('shows :>> ', shows);
+  const unique = [...new Set(shows)];
+  // console.log('unique :>> ', unique);
+  unique.forEach(show => {
+    let option = document.createElement("option");
+    option.innerHTML = show;
+    option.value = show;
+    dropdown.appendChild(option);
+  });
+};
+
+
+//5 add event listeners
+// const setEventListeners = (shows) => {
+//   document.querySelector("#date")
+//       .addEventListener("change", (event) => {
+//           filterByDate(shows)
+
+//       });
+//   document.querySelector("#showDropdown")
+//       .addEventListener("change", (event) => {
+//           filterByDropDown(shows)
+
+//       });
+// };
+
+//7 fiter by dropdown
+const filterByDropDown = (shows) => {
+  const dropDownValue = document.querySelector("#showDropdown").value
+  console.log('dropDownValue :>> ', dropDownValue);
+  const filteredshows = games.filter(show => {
+      return show.shows.name === dropDownValue || dropDownValue === "select type"
+  })
+
+  createHtmlTable(filteredGames)
+}
